@@ -3,7 +3,7 @@ import { RootState } from "../store";
 
 const baseQuery = fetchBaseQuery({
   baseUrl:
-    "http://localhost:5300/api",
+    "https://portfolio-dashboard-backend-projects.vercel.app/api",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
