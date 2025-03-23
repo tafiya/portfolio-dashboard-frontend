@@ -8,10 +8,12 @@ import Blogs from "@/pages/Blogs";
 import Projects from "@/pages/Projects";
 import Services from "@/pages/Services";
 import Login from "@/pages/Login";
+import CreateBlog from "@/pages/CreateBlog";
+import CreateProject from "@/pages/CreateProject";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
@@ -32,8 +34,16 @@ const router = createBrowserRouter([
         element: <Blogs />,
       },
       {
+        path: "createBlogs",
+        element: <CreateBlog />,
+      },
+      {
         path: "projects",
         element: <Projects />,
+      },
+      {
+        path: "createProject",
+        element: <CreateProject />,
       },
       {
         path: "service",
@@ -43,7 +53,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
 ]);

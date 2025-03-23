@@ -1,29 +1,13 @@
-import { Link, Outlet } from "react-router-dom";
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuLabel,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu";
-
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {
-  BookOpenText,
-  LayoutDashboard,
-  LogOut,
-  Logs,
-  UserRoundPen,
-  UsersRound,
-  X,
-} from "lucide-react";
+import { LayoutDashboard, LogOut, Logs, UsersRound, X } from "lucide-react";
+import { useAppDispatch } from "./redux/hook";
+import { logout } from "./redux/features/auth/authSlice";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  // const dispatch = useAppDispatch();
-
-  // const user = useAppSelector(selectCurrentUser);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
@@ -61,32 +45,50 @@ function App() {
           {/* Sidebar Navigation */}
           <nav className="mt-10">
             <ul className="">
-              <Link to="/admin/manage-product">
+              {/* <Link to="/home/about">
                 <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
                   <BookOpenText />
                   About
                 </li>
               </Link>
-              <Link to="/admin/myProfile">
+              <Link to="/home/education">
                 <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
                   <UserRoundPen />
                   Education
                 </li>
-              </Link>
-              <Link to="/admin/manage-orders">
+              </Link> */}
+              <Link to="/home/skills">
                 <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
                   <Logs />
                   Skill
                 </li>
               </Link>
-              <Link to="/admin/manage-orders">
+              <Link to="/home/blogs">
                 <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
                   <Logs />
                   Blogs
                 </li>
               </Link>
+              <Link to="/home/createBlogs">
+                <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
+                  <Logs />
+                  Create Blogs
+                </li>
+              </Link>
+              <Link to="/home/projects">
+                <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
+                  <Logs />
+                  Projects
+                </li>
+              </Link>
+              <Link to="/home/createProject">
+                <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
+                  <Logs />
+                  Create Projects
+                </li>
+              </Link>
 
-              <Link to="/admin/manage-user">
+              <Link to="/home/service">
                 <li className="p-4 m-4 flex items-center justify-center gap-2 hover:bg-gray-700 border-y border-gray-600 transition-colors">
                   <UsersRound />
                   Services
@@ -96,7 +98,10 @@ function App() {
               <hr className=" my-6" />
 
               <li
-                // onClick={() => dispatch(logout())}
+                onClick={() => {
+                  dispatch(logout());
+                  navigate("/");
+                }}
                 className="p-4 flex items-center justify-center gap-2 hover:bg-gray-700  border-gray-600 transition-colors"
               >
                 <LogOut />
