@@ -15,7 +15,7 @@ The **Portfolio Dashboard** is a web application that allows you to create, upda
 - **UI Components**: ShadCN
 - **Authentication**: JWT (JSON Web Token)
 ## Live Link
-[View Live Project]((https://portfolio-dashboard-frontend-self.vercel.app/))  
+[View Live Project](https://portfolio-dashboard-frontend-self.vercel.app/)  
 
 ## Server-Side Repository
 [GitHub Repository](https://github.com/tafiya/portfolio-dashboard-backend)
