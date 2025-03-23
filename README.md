@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+# Portfolio Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The **Portfolio Dashboard** is a web application that allows you to create, update, and remove content on your portfolio website. It serves as a content management system (CMS) for efficiently managing your portfolio.
 
-Currently, two official plugins are available:
+## Features
+- **Authentication**: Secure login using JWT authentication.
+- **Content Management**: Create, update, and delete portfolio sections like projects, skills, experiences, and blogs.
+- **User-Friendly UI**: Built with ShadCN for a modern and accessible interface.
+- **TypeScript Support**: Ensures type safety and better development experience.
+- **Real-time Updates**: Instantly reflects changes on your portfolio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React.js, TypeScript
+- **UI Components**: ShadCN
+- **Authentication**: JWT (JSON Web Token)
+## Live Link
+[View Live Project]((https://portfolio-dashboard-frontend-self.vercel.app/))  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Server-Side Repository
+[GitHub Repository](https://github.com/tafiya/portfolio-dashboard-backend)
